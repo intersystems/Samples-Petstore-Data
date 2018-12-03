@@ -1,0 +1,11 @@
+_SYSTEM
+PASSWORD
+zn "USER"
+do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/DemoAddressCls.xml","cdk")
+do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/DemoPetShopCls.xml","cdk")
+do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/DemoPetCls.xml","cdk")
+do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/DemoPetSlowCls.xml","cdk")
+do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/PetUtilCls.xml","cdk")
+do ##class(Demo.PetUtil).PopulateData()
+
+halt

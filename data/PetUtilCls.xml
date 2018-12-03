@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2018.1.1 (Build 643U)" ts="2018-11-30 15:20:30">
+<Class name="Demo.PetUtil">
+<Description>
+PURPOSE: This ulitity class is used to populate test data for Demo.Pet, Demo.PetShop and Demo.Address </Description>
+<Super>%RegisteredObject</Super>
+<TimeChanged>64982,55189.271463</TimeChanged>
+<TimeCreated>64982,46189.414936</TimeCreated>
+
+<Method name="DeleteData">
+<Description>
+This method deletes all data for Demo.Pet, Demo.PetShop, and Demo.Address.</Description>
+<ClassMethod>1</ClassMethod>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	write "Deleting pet data...", !
+	do ##class(Demo.Pet).%DeleteExtent()
+	
+	write "Deleting petshop data...", !
+	do ##class(Demo.PetShop).%DeleteExtent()
+	
+	write "Deleting address data...", !
+	do ##class(Demo.Address).%DeleteExtent()
+	
+	write "Success! All data reset."
+]]></Implementation>
+</Method>
+
+<Method name="PopulateData">
+<Description>
+This method populates test data for Demo.Address, Demo.PetShop, Demo.Pet, and Demo.PetSlow</Description>
+<ClassMethod>1</ClassMethod>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	do ##class(Demo.Address).Populate(300)
+	do ##class(Demo.PetShop).Populate(300)
+	do ##class(Demo.Pet).Populate(200000)
+	do ##class(Demo.PetSlow).CopyData()
+]]></Implementation>
+</Method>
+</Class>
+</Export>

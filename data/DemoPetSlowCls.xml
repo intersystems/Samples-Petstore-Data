@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2018.1.1 (Build 643U)" ts="2018-11-30 15:49:05">
+<Class name="Demo.PetSlow">
+<Super>%Persistent</Super>
+<TimeChanged>64982,56789.129736</TimeChanged>
+<TimeCreated>64980,60845.619356</TimeCreated>
+
+<Property name="Name">
+<Type>%String</Type>
+</Property>
+
+<Property name="Type">
+<Type>%String</Type>
+<Parameter name="VALUELIST" value=",dog,bird,cat,rat,mouse,rabbit"/>
+</Property>
+
+<Property name="Color">
+<Type>%String</Type>
+</Property>
+
+<Property name="PetShop">
+<Type>Demo.PetShop</Type>
+</Property>
+
+<Method name="CopyData">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set status = $$$OK
+	
+	//Deleting data from previous run to avoid duplication of data
+	do ##class(Demo.PetSlow).%DeleteExtent()
+	
+	&sql(select count(*) into :countPet from demo.pet)
+	write "Copying pet data now without bitmap indices...", !
+	
+	try {
+		for i=1:1:countPet
+		{
+			set pet = ##class(Demo.Pet).%OpenId(i)
+			set newPet = ##class(Demo.PetSlow).%New()
+			set newPet.Name = pet.Name
+			set newPet.Type = pet.Type
+			set newPet.Color = pet.Color
+			set newPet.PetShop = pet.PetShop
+			set status = newPet.%Save()
+		}
+		write "All pets are now copied over."
+	}
+	catch e {
+		write "Error occurred: " _ status
+		quit
+	}
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DataLocation>^Demo.PetSlowD</DataLocation>
+<DefaultData>PetSlowDefaultData</DefaultData>
+<IdLocation>^Demo.PetSlowD</IdLocation>
+<IndexLocation>^Demo.PetSlowI</IndexLocation>
+<StreamLocation>^Demo.PetSlowS</StreamLocation>
+<Data name="PetSlowDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Name</Value>
+</Value>
+<Value name="3">
+<Value>Type</Value>
+</Value>
+<Value name="4">
+<Value>Color</Value>
+</Value>
+<Value name="5">
+<Value>PetShop</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>

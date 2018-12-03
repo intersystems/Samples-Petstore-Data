@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2018.1.1 (Build 643U)" ts="2018-11-30 08:08:38">
+<Class name="Demo.Address">
+<Super>%Persistent,%Populate</Super>
+<TimeChanged>64972,35155.641348</TimeChanged>
+<TimeCreated>64877,59981.842887</TimeCreated>
+
+<Property name="Street">
+</Property>
+
+<Property name="City">
+</Property>
+
+<Property name="State">
+</Property>
+
+<Property name="Zip">
+</Property>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DataLocation>^Demo.AddressD</DataLocation>
+<DefaultData>AddressDefaultData</DefaultData>
+<IdLocation>^Demo.AddressD</IdLocation>
+<IndexLocation>^Demo.AddressI</IndexLocation>
+<StreamLocation>^Demo.AddressS</StreamLocation>
+<ExtentSize>160</ExtentSize>
+<Data name="AddressDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Street</Value>
+</Value>
+<Value name="3">
+<Value>City</Value>
+</Value>
+<Value name="4">
+<Value>State</Value>
+</Value>
+<Value name="5">
+<Value>Zip</Value>
+</Value>
+</Data>
+<Property name="%%CLASSNAME">
+<Selectivity>100.0000%</Selectivity>
+<AverageFieldSize>1</AverageFieldSize>
+</Property>
+<Property name="%%ID">
+<Selectivity>1</Selectivity>
+<AverageFieldSize>2.33</AverageFieldSize>
+</Property>
+<Property name="City">
+<Selectivity>3.8462%</Selectivity>
+<AverageFieldSize>7.38</AverageFieldSize>
+</Property>
+<Property name="State">
+<Selectivity>2.0833%</Selectivity>
+<AverageFieldSize>2</AverageFieldSize>
+</Property>
+<Property name="Street">
+<Selectivity>0.6250%</Selectivity>
+<AverageFieldSize>16.53</AverageFieldSize>
+</Property>
+<Property name="Zip">
+<Selectivity>0.6250%</Selectivity>
+<AverageFieldSize>5</AverageFieldSize>
+</Property>
+<SQLMap name="IDKEY">
+<BlockCount>-4</BlockCount>
+</SQLMap>
+</Storage>
+</Class>
+</Export>

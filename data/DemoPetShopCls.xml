@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2018.1.1 (Build 643U)" ts="2018-11-30 08:09:08">
 <Class name="Demo.PetShop">
+<Description>PURPOSE: This class stores information about a petshop.</Description>
 <Super>%Persistent,%Populate</Super>
 <TimeChanged>64972,35161.814641</TimeChanged>
 <TimeCreated>64971,33614.28286</TimeCreated>

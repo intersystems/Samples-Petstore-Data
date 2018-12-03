@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2018.1.1 (Build 643U)" ts="2018-11-30 08:08:15">
 <Class name="Demo.Pet">
+<Description>PURPOSE: This class stores information about pets.</Description>
 <Super>%Persistent,%Populate</Super>
 <TimeChanged>64982,29202.915969</TimeChanged>
 <TimeCreated>64971,33611.200622</TimeCreated>
@@ -34,6 +35,7 @@
 </Index>
 
 <Method name="AddPetShopToAll">
+<Description>This is a utility method used to assign petshops to pets. It will likely be removed.</Description>
 <ClassMethod>1</ClassMethod>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
@@ -59,10 +61,12 @@
 </Method>
 
 <Method name="DisplayAllBirdsByLocation">
+<Description>This method displays information for all yellow birds in a particular city and state.</Description>
 <ClassMethod>1</ClassMethod>
 <FormalSpec>city:%String,state:%String</FormalSpec>
 <Implementation><![CDATA[
 	// Use cursor-based embedded SQL to retrieve data
+	// -> is an implicit join and follows object references to make left joins easier
 	&sql(DECLARE c1 CURSOR FOR SELECT name, petshop->owner, petshop->phone 
 	INTO :name, :owner, :phone
 	FROM demo.pet 

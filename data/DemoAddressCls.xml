@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2018.1.1 (Build 643U)" ts="2018-11-30 08:08:38">
 <Class name="Demo.Address">
+<Description>PURPOSE: This class stores information about locations. Demo.PetShop refers to this class for the location of petshops.</Description>
 <Super>%Persistent,%Populate</Super>
 <TimeChanged>64972,35155.641348</TimeChanged>
 <TimeCreated>64877,59981.842887</TimeCreated>

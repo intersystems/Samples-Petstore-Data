@@ -72,7 +72,7 @@
 	&sql(OPEN c1)
 	
 	// Fetch each row and display it using custom formatting. ?15 allots 15 characters padded with the appropriate number of spaces. ! adds a new line.
-	write "Name", ?15, Color", !
+	write "Name", ?15, "Color", !
 	&sql(FETCH c1)
 	while (SQLCODE = 0) {
 		write name, ?15, color, !

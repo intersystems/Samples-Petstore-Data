@@ -70,10 +70,10 @@
 	
 	&sql(OPEN c1)
 	
-	write "Name : Color"
+	write "Name : Color", !
 	&sql(FETCH c1)
 	while (SQLCODE = 0) {
-		write name, " : ", color
+		write name, " : ", color, !
 		&sql(FETCH c1)
 	}
 	

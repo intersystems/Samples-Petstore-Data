@@ -32,6 +32,7 @@ This method populates test data for Demo.Address, Demo.PetShop, Demo.Pet, and De
 <ClassMethod>1</ClassMethod>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
+	write "Populating Address, Petshop, Pet, and PetSlow classes now..." , !
 	do ##class(Demo.Address).Populate(300)
 	do ##class(Demo.PetShop).Populate(300)
 	do ##class(Demo.Pet).Populate(200000)

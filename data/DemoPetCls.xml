@@ -63,19 +63,19 @@
 <FormalSpec>city:%String,state:%String</FormalSpec>
 <Implementation><![CDATA[
 	// Use cursor-based embedded SQL to retrieve data
-	&sql(DECLARE c1 CURSOR FOR SELECT name, color 
-	INTO :name, :color
+	&sql(DECLARE c1 CURSOR FOR SELECT name, petshop->owner, petshop->phone 
+	INTO :name, :owner, :phone
 	FROM demo.pet 
-	WHERE type='bird' and petshop->location->city = :city and 
+	WHERE type = 'bird' and color = 'Yellow' and petshop->location->city = :city and 
 	petshop->location->state = :state)
 	
 	&sql(OPEN c1)
 	
 	// Fetch each row and display it using custom formatting. ?15 allots 15 characters padded with the appropriate number of spaces. ! adds a new line.
-	write "Name", ?15, "Color", !
+	write "Name", ?15, "Owner", ?20, "Phone", !
 	&sql(FETCH c1)
 	while (SQLCODE = 0) {
-		write name, ?15, color, !
+		write name, ?15, owner, ?20, phone, !
 		&sql(FETCH c1)
 	}
 	

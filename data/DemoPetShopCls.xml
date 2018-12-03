@@ -5,8 +5,9 @@
 <TimeChanged>64972,35161.814641</TimeChanged>
 <TimeCreated>64971,33614.28286</TimeCreated>
 
-<Property name="Name">
+<Property name="Owner">
 <Type>%String</Type>
+<Parameter name="POPSPEC" value="##class(%PopulateUtils).Name()"/>
 </Property>
 
 <Property name="Location">
@@ -35,7 +36,7 @@
 <Value>%%CLASSNAME</Value>
 </Value>
 <Value name="2">
-<Value>Name</Value>
+<Value>Owner</Value>
 </Value>
 <Value name="3">
 <Value>Location</Value>
@@ -56,7 +57,7 @@
 <Selectivity>1</Selectivity>
 <AverageFieldSize>2.3</AverageFieldSize>
 </Property>
-<Property name="Name">
+<Property name="Owner">
 <Selectivity>0.8197%</Selectivity>
 <AverageFieldSize>15.84</AverageFieldSize>
 </Property>

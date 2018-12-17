@@ -23,55 +23,5 @@
 <Properties>Location</Properties>
 <Unique>1</Unique>
 </Index>
-
-<Storage name="Default">
-<Type>%Storage.Persistent</Type>
-<DataLocation>^Demo.PetShopD</DataLocation>
-<DefaultData>PetShopDefaultData</DefaultData>
-<IdLocation>^Demo.PetShopD</IdLocation>
-<IndexLocation>^Demo.PetShopI</IndexLocation>
-<StreamLocation>^Demo.PetShopS</StreamLocation>
-<ExtentSize>122</ExtentSize>
-<Data name="PetShopDefaultData">
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>Owner</Value>
-</Value>
-<Value name="3">
-<Value>Location</Value>
-</Value>
-<Value name="4">
-<Value>Phone</Value>
-</Value>
-</Data>
-<Property name="%%CLASSNAME">
-<Selectivity>100.0000%</Selectivity>
-<AverageFieldSize>1</AverageFieldSize>
-</Property>
-<Property name="%%ID">
-<Selectivity>1</Selectivity>
-<AverageFieldSize>2.5</AverageFieldSize>
-</Property>
-<Property name="Location">
-<Selectivity>1</Selectivity>
-<AverageFieldSize>2.3</AverageFieldSize>
-</Property>
-<Property name="Owner">
-<Selectivity>0.8197%</Selectivity>
-<AverageFieldSize>15.84</AverageFieldSize>
-</Property>
-<Property name="Phone">
-<Selectivity>0.8197%</Selectivity>
-<AverageFieldSize>12</AverageFieldSize>
-</Property>
-<SQLMap name="IDKEY">
-<BlockCount>-4</BlockCount>
-</SQLMap>
-<SQLMap name="LocationIdx">
-<BlockCount>-4</BlockCount>
-</SQLMap>
-</Storage>
 </Class>
 </Export>

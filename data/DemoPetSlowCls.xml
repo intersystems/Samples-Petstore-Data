@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2018.1.1 (Build 643U)" ts="2018-11-30 15:49:05">
 <Class name="Demo.PetSlow">
+<Description>PURPOSE: This class is almost exactly the same as Demo.Pet except it does not have bitmap indices.</Description>
+<Description>To copy data from Demo.Pet, run: do ##class(Demo.PetSlow).CopyData()</Description>
+<Description>Queries such as the one stated in the SQL QuickStart are usually slower when run against this class compared to Demo.Pet due to no bitmap indices.</Description>
 <Super>%Persistent</Super>
 <TimeChanged>64982,56789.129736</TimeChanged>
 <TimeCreated>64980,60845.619356</TimeCreated>
@@ -23,6 +26,7 @@
 </Property>
 
 <Method name="CopyData">
+<Description>This method copies data from Demo.Pet so both classes have the exact same data to show that bitmap indices improve performance</Description>
 <ClassMethod>1</ClassMethod>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[

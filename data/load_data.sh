@@ -16,5 +16,5 @@
 # limitations under the License.
 #
 #
-cat /tmp/irisupdate/load_data.script | iris session iris 
+cat /tmp/irisupdate/load_data.script | sed "s|PASSWORD|$passwd|g" | iris session iris 
 

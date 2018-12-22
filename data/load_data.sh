@@ -16,5 +16,5 @@
 # limitations under the License.
 #
 #
-iris session iris < /tmp/irisupdate/load_data.script
+cat /tmp/irisupdate/load_data.script | iris session iris 
 

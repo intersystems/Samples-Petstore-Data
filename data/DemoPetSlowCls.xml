@@ -30,31 +30,40 @@
 <ClassMethod>1</ClassMethod>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-	set status = $$$OK
+	        set status = $$$OK
+                
+                //Deleting data from previous run to avoid duplication of data
+                do ##class(Demo.PetSlow).%DeleteExtent()
+                
+                try {
+                     	write "Copying pet data now without bitmap indices...", !
+                     	set tStatement = ##class(%SQL.Statement).%New()
+                    	set status = tStatement.%Prepare("SELECT id FROM demo.pet")
+                     	if status'=1 {
+                               write "%Prepare failed:" 
+                               do $System.Status.DisplayError(qStatus) 
+                               quit
+                    	}
+                     	set rset = tStatement.%Execute()
 	
-	//Deleting data from previous run to avoid duplication of data
-	do ##class(Demo.PetSlow).%DeleteExtent()
-	
-	&sql(select count(*) into :countPet from demo.pet)
-	write "Copying pet data now without bitmap indices...", !
-	
-	try {
-		for i=1:1:countPet
-		{
-			set pet = ##class(Demo.Pet).%OpenId(i)
-			set newPet = ##class(Demo.PetSlow).%New()
-			set newPet.Name = pet.Name
-			set newPet.Type = pet.Type
-			set newPet.Color = pet.Color
-			set newPet.PetShop = pet.PetShop
-			set status = newPet.%Save()
-		}
-		write "All pets are now copied over."
-	}
-	catch e {
-		write "Error occurred: " _ status
-		quit
-	}
+			//For each pet in Demo.Pet, copy data to Demo.PetSlow
+                     	while rset.%Next() {
+                     		set pet = ##class(Demo.Pet).%OpenId(rset.id)
+                     		set newPet = ##class(Demo.PetSlow).%New()
+               	      		set newPet.Name = pet.Name
+                      		set newPet.Type = pet.Type
+                  		set newPet.Color = pet.Color
+                   		set newPet.PetShop = pet.PetShop
+                      		set status = newPet.%Save() 
+                	}
+                                
+                	write "All pets are now copied over."
+                }
+                catch e {
+                       	write "Error occurred: " _ status
+                     	quit
+                }
+
 ]]></Implementation>
 </Method>
 </Class>

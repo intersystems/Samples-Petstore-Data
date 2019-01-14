@@ -4,9 +4,9 @@ The main goal is to show the benefits of SQL within InterSystems IRIS Data Platf
 
 
 ## GET CONNECTED: Reset your password and get connection information
-This sample assumes you already have an instance. If you do not yet have one, you can visit: [Direct Access to InterSystems IRIS](https://learning.intersystems.com/course/view.php?name=Java%20Build), [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/intersystems.intersystems-iris-single-node), [Google Cloud Platform](https://console.cloud.google.com/marketplace/details/intersystems-launcher/intersystems-iris), or [Amazon Web Services](https://aws.amazon.com/marketplace/pp/B07KVYZYT9).
+This sample assumes you already have an instance. If you do not yet have one, you can visit: [InterSystems Labs](https://learning.intersystems.com/course/view.php?name=Java%20Build), [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/intersystems.intersystems-iris-single-node), [Google Cloud Platform](https://console.cloud.google.com/marketplace/details/intersystems-launcher/intersystems-iris), or [Amazon Web Services](https://aws.amazon.com/marketplace/pp/B07KVYZYT9).
 
-
+Data is already preloaded into InterSystems Labs. If you have Azure, GCP, or AWS:
 1) Reset the default passwords
 
 	`iris password`

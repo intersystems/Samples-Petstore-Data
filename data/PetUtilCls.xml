@@ -2,7 +2,7 @@
 <Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2018.1.1 (Build 643U)" ts="2018-11-30 15:20:30">
 <Class name="Demo.PetUtil">
 <Description>
-PURPOSE: This ulitity class is used to populate test data for Demo.Pet, Demo.PetShop and Demo.Address </Description>
+PURPOSE: This ulitity class is used to populate test data for Demo.Pet, Demo.PetShop and Demo.Address. </Description>
 <Super>%RegisteredObject</Super>
 <TimeChanged>64982,55189.271463</TimeChanged>
 <TimeCreated>64982,46189.414936</TimeCreated>
@@ -28,7 +28,7 @@ This method deletes all data for Demo.Pet, Demo.PetShop, and Demo.Address.</Desc
 
 <Method name="PopulateData">
 <Description>
-This method populates test data for Demo.Address, Demo.PetShop, Demo.Pet, and Demo.PetSlow</Description>
+This method populates test data for Demo.Address, Demo.PetShop, and Demo.Pet</Description>
 <ClassMethod>1</ClassMethod>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
@@ -36,7 +36,6 @@ This method populates test data for Demo.Address, Demo.PetShop, Demo.Pet, and De
 	do ##class(Demo.Address).Populate(300)
 	do ##class(Demo.PetShop).Populate(300)
 	do ##class(Demo.Pet).Populate(200000)
-	do ##class(Demo.PetSlow).CopyData()
 ]]></Implementation>
 </Method>
 </Class>

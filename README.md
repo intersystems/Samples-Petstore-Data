@@ -22,11 +22,17 @@ Data is already preloaded into InterSystems Labs. If you have Azure, GCP, or AWS
 	`iris info`
 		This will show the URL for the Management Portal. Follow System Explorer > SQL to view schemas or execute queries.
 
-## LOADING DATA: These steps are written for instances running in Google Cloud Platform, Azure, or AWS
+## LOADING DATA: Using GCP, Azure, or AWS
 
 1) Get the sample data and scripts
 	
 	`iris load https://github.com/intersystems/Samples-Petstore-Data`
+	
+## LOADING DATA: Using a local instance
+
+1) Clone this repository: `git clone https://github.com/intersystems/Samples-Petstore-Data`
+2) Navigate to System Explorer > Classes and import from <repo home>/data folder: DemoAddressCls.xml, DemoPetShopCls.xml, DemoPetCls.xml, and PetUtilCls.xml. Make sure the classes are also compiled when importing.
+3) Open InterSystems Terminal and run: `do ##class(Demo.PetUtil).PopulateData()`
 
 ---
 ## TAKE A LOOK AT THE DATA - from the IRIS shell (database user)
